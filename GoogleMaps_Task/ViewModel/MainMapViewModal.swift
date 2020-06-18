@@ -13,6 +13,7 @@ import GooglePlaces
 
 class MainMapViewModal: NSObject {
 
+    // MARK: - Properties
     var mapView: GMSMapView!
     let geoCoder = CLGeocoder()
     let locationManager = CLLocationManager()
@@ -63,9 +64,9 @@ class MainMapViewModal: NSObject {
     func startUpdateLocation()  {
         self.locationManager.startUpdatingLocation()
     }
-    
 }
 
+// MARK: - CLLocation Manager Delegate
 extension MainMapViewModal: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last{
@@ -84,6 +85,7 @@ extension MainMapViewModal: CLLocationManagerDelegate {
     }
 }
 
+// MARK: - GMS Map View Delegate
 extension MainMapViewModal: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         moveMarkerToLocation(location: coordinate)
@@ -131,34 +133,23 @@ extension MainMapViewModal: GMSMapViewDelegate {
     }
 }
 
-// MARK: - Search Bar Delegate
-    extension MainMapViewModal : GMSAutocompleteResultsViewControllerDelegate {
-        func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
-    didAutocompleteWith place: GMSPlace) {
-            searchController?.isActive = false
-            destinationMarker.map = nil
-            destinationMarker = GMSMarker(position: place.coordinate)
-            destinationLocation = place.coordinate
-            getAddressFor(location: place.coordinate) { (obtainedAddress, governorate) in
-                self.destinationMarker.title = "Address : \(obtainedAddress)"
-            }
-            destinationMarker.map = mapView
-            drawPathDirection()
+// MARK: - GMS Autocomplete Results ViewController Delegate
+extension MainMapViewModal : GMSAutocompleteResultsViewControllerDelegate {
+    func resultsController(_ resultsController: GMSAutocompleteResultsViewController, didAutocompleteWith place: GMSPlace) {
+        searchController?.isActive = false
+        destinationMarker.map = nil
+        destinationMarker = GMSMarker(position: place.coordinate)
+        destinationLocation = place.coordinate
+        getAddressFor(location: place.coordinate) { (obtainedAddress, governorate) in
+            self.destinationMarker.title = "Address : \(obtainedAddress)"
+        }
+        destinationMarker.map = mapView
+        drawPathDirection()
     }
 
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
                            didFailAutocompleteWithError error: Error){
-      // TODO: handle the error.
       print("Error: ", error.localizedDescription)
-    }
-
-    // Turn the network activity indicator on and off again.
-    func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
-      UIApplication.shared.isNetworkActivityIndicatorVisible = true
-    }
-
-    func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
-      UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
         
     func drawPathDirection() {
@@ -198,5 +189,5 @@ extension MainMapViewModal: GMSMapViewDelegate {
             }
             }).resume()
     }
-    
+
 }
