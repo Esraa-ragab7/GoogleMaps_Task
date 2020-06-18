@@ -39,4 +39,4 @@ Backup[ ]of[ ]*.numbers/
 Pods/
 
 # secrets
-GoogleMaps_Task/Secrets.plist
+#GoogleMaps_Task/Secrets.plist
