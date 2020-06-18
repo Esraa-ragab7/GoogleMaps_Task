@@ -99,6 +99,7 @@
 				F20E2AE9249AD49B003D78D1 /* Assets.xcassets */,
 				F20E2AEE249AD49B003D78D1 /* Info.plist */,
 				F20E2B00249AEB4C003D78D1 /* Secrets.plist */,
+				F20E2AF9249AE6DB003D78D1 /* Secrets.example.plist */,
 			);
 			path = GoogleMaps_Task;
 			sourceTree = "<group>";
@@ -147,7 +148,6 @@
 		F20E2AFD249AE7E2003D78D1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				F20E2AF9249AE6DB003D78D1 /* Secrets.example.plist */,
 				F20E2AFB249AE7D0003D78D1 /* AccessToApiKeys.swift */,
 				F20E2B04249B0320003D78D1 /* LocationFunctions.swift */,
 			);
