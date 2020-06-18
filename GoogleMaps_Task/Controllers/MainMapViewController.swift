@@ -7,14 +7,23 @@
 //
 
 import UIKit
+import GoogleMaps
+import CoreLocation
 
 class MainMapViewController: UIViewController {
-
+    
+    // MARK: - outlets
+    @IBOutlet weak var mapView: GMSMapView!
+    
+    // MARK: - Properties
+    private var mainMapViewModal: MainMapViewModal = MainMapViewModal()
+    
+    // MARK: - Viewcontroller LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        mainMapViewModal.initMap(mapView: mapView)
+        navigationItem.titleView = mainMapViewModal.setSearchBar()
+        definesPresentationContext = true
     }
-
-
 }
 
