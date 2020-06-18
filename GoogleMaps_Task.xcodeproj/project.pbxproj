@@ -17,6 +17,8 @@
 		F20E2AFA249AE6DB003D78D1 /* Secrets.example.plist in Resources */ = {isa = PBXBuildFile; fileRef = F20E2AF9249AE6DB003D78D1 /* Secrets.example.plist */; };
 		F20E2AFC249AE7D0003D78D1 /* AccessToApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20E2AFB249AE7D0003D78D1 /* AccessToApiKeys.swift */; };
 		F20E2B01249AEB4C003D78D1 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = F20E2B00249AEB4C003D78D1 /* Secrets.plist */; };
+		F20E2B03249AEE88003D78D1 /* MainMapViewModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20E2B02249AEE88003D78D1 /* MainMapViewModal.swift */; };
+		F20E2B05249B0320003D78D1 /* LocationFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20E2B04249B0320003D78D1 /* LocationFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		F20E2AF9249AE6DB003D78D1 /* Secrets.example.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Secrets.example.plist; sourceTree = "<group>"; };
 		F20E2AFB249AE7D0003D78D1 /* AccessToApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToApiKeys.swift; sourceTree = "<group>"; };
 		F20E2B00249AEB4C003D78D1 /* Secrets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
+		F20E2B02249AEE88003D78D1 /* MainMapViewModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapViewModal.swift; sourceTree = "<group>"; };
+		F20E2B04249B0320003D78D1 /* LocationFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationFunctions.swift; sourceTree = "<group>"; };
 		FB6AA9463CBE17C9DAF5C57F /* Pods-GoogleMaps_Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMaps_Task.release.xcconfig"; path = "Target Support Files/Pods-GoogleMaps_Task/Pods-GoogleMaps_Task.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +122,7 @@
 		F20E2AF6249AE063003D78D1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F20E2B02249AEE88003D78D1 /* MainMapViewModal.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 			children = (
 				F20E2AF9249AE6DB003D78D1 /* Secrets.example.plist */,
 				F20E2AFB249AE7D0003D78D1 /* AccessToApiKeys.swift */,
+				F20E2B04249B0320003D78D1 /* LocationFunctions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -265,7 +271,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F20E2B05249B0320003D78D1 /* LocationFunctions.swift in Sources */,
 				F20E2AE5249AD49A003D78D1 /* MainMapViewController.swift in Sources */,
+				F20E2B03249AEE88003D78D1 /* MainMapViewModal.swift in Sources */,
 				F20E2AE1249AD49A003D78D1 /* AppDelegate.swift in Sources */,
 				F20E2AE3249AD49A003D78D1 /* SceneDelegate.swift in Sources */,
 				F20E2AFC249AE7D0003D78D1 /* AccessToApiKeys.swift in Sources */,
