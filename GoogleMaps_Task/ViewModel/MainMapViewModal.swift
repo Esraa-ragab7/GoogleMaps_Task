@@ -116,7 +116,7 @@ extension MainMapViewModal: GMSMapViewDelegate {
     }
     
     func getCountryCode() -> String {
-        return "EG"
+        return Locale.current.regionCode ?? "EG"
     }
     
     func getAddressFor(location: CLLocationCoordinate2D,
