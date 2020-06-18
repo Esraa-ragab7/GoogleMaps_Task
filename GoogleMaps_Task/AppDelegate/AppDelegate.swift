@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        GMSServices.provideAPIKey(valueForAPIKey(named:"GOOGLE_MAPS_API_KEY"))
+        configureGoogleMaps_SignIn()
         
         return true
     }
@@ -37,3 +38,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate {
+    internal func configureGoogleMaps_SignIn() {
+        GMSServices.provideAPIKey(valueForAPIKey(named:"GOOGLE_MAPS_API_KEY"))
+        GMSPlacesClient.provideAPIKey(valueForAPIKey(named:"GOOGLE_MAPS_API_KEY"))
+    }
+}
